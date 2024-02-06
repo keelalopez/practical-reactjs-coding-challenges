@@ -13,6 +13,12 @@ import './index.css'
 
 const PasswordGenerator = () => {
   const [passwordLength, setPasswordLength] = useState<number>(10)
+  const [userPassword, setUserPassword] = useState<number>(10)
+
+  const refreshPassword = (value: any) => {
+    // setPasswordLength(value)
+    console.log(value)
+  }
 
   const onChangePasswordLength = (value: any) => {
     setPasswordLength(value)
@@ -31,8 +37,8 @@ const PasswordGenerator = () => {
       </div>
       <div className="password-input-wrapper">
         <div className="password-field">
-          <input type="text" placeholder="your password" value="B9QI4PDBYY" />
-          <img src={refreshIcon} alt="refresh the password" />
+          <input type="text" placeholder="your password" value={userPassword} />
+          <img src={refreshIcon} alt="refresh the password" onClick={refreshPassword}/>
         </div>
         <button className="copy-btn">
           <img src={copyIcon} alt="copy password" />
